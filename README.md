@@ -4,7 +4,7 @@ Este repositorio es mi bitácora personal y portafolio técnico de cibersegurida
 
 El objetivo es consolidar mi metodología, practicar con herramientas de la industria y demostrar mi evolución continua hacia un perfil profesional en ciberseguridad.
 
-Todos los laboratorios son realizados en entornos controlados y con fines puramente educativos.
+**Todos los laboratorios son realizados en entornos controlados y con fines puramente educativos.**
 
 ---
 

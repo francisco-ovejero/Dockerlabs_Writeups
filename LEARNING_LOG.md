@@ -5,8 +5,8 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 ---
 
 ##  Resumen Global
-* **Laboratorios Resueltos:** 6
-* **Plataforma Principal:** DockerLabs
+* **Laboratorios resueltos:** 8
+* **Plataforma orincipal:** DockerLabs
 
 ---
 
@@ -19,7 +19,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 * **Técnicas y conceptos clave:**
   * **Nmap:** escaneo de puertos y detección de versiones de servicios usando el parámetro `-sCV`.
   * **Netcat:** conexiones remota al especificar la dirección IP y el puerto.
-  * **Exploit de la version `vsftpd 2.3.4` FTP.**
+  * **Exploit de la version `vsftpd 2.3.4` FTP (CVE-2011-2523).**
 * **💡 Lección y aprendizaje clave:**
     > Esta práctica me permitió familiarizarme con el proceso de reconocimiento inicial, el análisis y reconocimiento de vulnerabilidades y comprender los peligros de mantener software o servicios desactualizados.
 * **Writeup:** [/VeryEasy/firsthacking.md](./VeryEasy/firsthacking.md)
@@ -63,3 +63,15 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 * **Writeup:** [/VeryEasy/obsession.md](./VeryEasy/obsession.md)
 
 ---
+
+###  28/Oct/2026
+* **Laboratorio:** Hedgehog
+* **Dificultad:** Very Easy
+* **Técnicas y conceptos clave:**
+  * **Comando `curl`:** puedo usarlo para acceder a los datos de una página web sin necesidad de utilizar el navegador. Con el parámetro `-I` puedo consultar los headers de la página
+  * **Manipular diccionarios con `tac`.**
+* **💡 Lección y aprendizaje clave:**
+  > Es importante encontrar nuevas formas de utilizar un mismo diccionario para comparar credenciales. Es posible tanto alterar su orden como eliminar/agregar criterios al utilizar `sed`.
+* **Writeup:** [/VeryEasy/hedgehog.md](./VeryEasy/hedgehog.md)
+
+--- 

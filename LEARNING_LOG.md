@@ -5,7 +5,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 ---
 
 ##  Resumen Global
-* **Laboratorios resueltos:** 8
+* **Laboratorios resueltos:** 9
 * **Plataforma orincipal:** DockerLabs
 
 ---
@@ -68,10 +68,24 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 * **Laboratorio:** Hedgehog
 * **Dificultad:** Very Easy
 * **Técnicas y conceptos clave:**
-  * **Comando `curl`:** puedo usarlo para acceder a los datos de una página web sin necesidad de utilizar el navegador. Con el parámetro `-I` puedo consultar los headers de la página
+  * **Comando `curl`:** puedo usarlo para acceder a los datos de una página web sin necesidad de utilizar el navegador. Con el parámetro `-I` puedo consultar los headers de la página.
   * **Manipular diccionarios con `tac`.**
 * **💡 Lección y aprendizaje clave:**
   > Es importante encontrar nuevas formas de utilizar un mismo diccionario para comparar credenciales. Es posible tanto alterar su orden como eliminar/agregar criterios al utilizar `sed`.
 * **Writeup:** [/VeryEasy/hedgehog.md](./VeryEasy/hedgehog.md)
+
+--- 
+
+###  30/Oct/2026
+* **Laboratorio:** Acme
+* **Dificultad:** Very Easy
+* **Técnicas y conceptos clave:**
+  * **Comando `find`:** se utiliza para buscar archivos/directorios dentro del sistema basandose en el criterio especificado. Puede buscar por nombre, filtrar caracteristicas e incluso realizar acciones como ejecutar o eliminar.
+  * **SUID:** permiso asiganble a archivo ejecutable. Al ejecutar archivo con permiso SUID, el proceso se ejecuta con los privilegios del dueño del archivo, que suele ser root.
+* **💡 Lección y aprendizaje clave:**
+  > SUID puede resultar peligroso cuando no se lo utiliza como corresponde. Si se encuentra en `/bin/bash`, cualquier usuario puede ejecutarlo y obtener privilegios root. Es de vital importancia para la seguridad conceder solo los permisos indispensables, tanto a los usuarios como a los archivos del sistema.
+
+  > `find` es un comando extremadamente útil que no solo sirve para encontrar archivos/directorios, sino que también puede realizar acciones como ejecutar `-exec`. Gracias a los criterios de búsqueda utilizados, `find` se vuelve una herramienta flexible.
+* **Writeup:** [/VeryEasy/acme.md](./VeryEasy/acme.md)
 
 --- 

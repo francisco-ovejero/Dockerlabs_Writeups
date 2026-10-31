@@ -81,7 +81,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 * **Dificultad:** Very Easy
 * **Técnicas y conceptos clave:**
   * **Comando `find`:** se utiliza para buscar archivos/directorios dentro del sistema basandose en el criterio especificado. Puede buscar por nombre, filtrar caracteristicas e incluso realizar acciones como ejecutar o eliminar.
-  * **SUID:** permiso asiganble a archivo ejecutable. Al ejecutar archivo con permiso SUID, el proceso se ejecuta con los privilegios del dueño del archivo, que suele ser root.
+  * **SUID:** permiso asignable a archivo ejecutable. Al ejecutar archivo con permiso SUID, el proceso se ejecuta con los privilegios del dueño del archivo, que suele ser root.
 * **💡 Lección y aprendizaje clave:**
   > SUID puede resultar peligroso cuando no se lo utiliza como corresponde. Si se encuentra en `/bin/bash`, cualquier usuario puede ejecutarlo y obtener privilegios root. Es de vital importancia para la seguridad conceder solo los permisos indispensables, tanto a los usuarios como a los archivos del sistema.
 

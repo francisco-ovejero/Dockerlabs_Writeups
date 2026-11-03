@@ -5,7 +5,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 ---
 
 ##  Resumen Global
-* **Laboratorios resueltos:** 9
+* **Laboratorios resueltos:** 10
 * **Plataforma orincipal:** DockerLabs
 
 ---
@@ -85,7 +85,24 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 * **💡 Lección y aprendizaje clave:**
   > SUID puede resultar peligroso cuando no se lo utiliza como corresponde. Si se encuentra en `/bin/bash`, cualquier usuario puede ejecutarlo y obtener privilegios root. Es de vital importancia para la seguridad conceder solo los permisos indispensables, tanto a los usuarios como a los archivos del sistema.
 
-  > `find` es un comando extremadamente útil que no solo sirve para encontrar archivos/directorios, sino que también puede realizar acciones como ejecutar `-exec`. Gracias a los criterios de búsqueda utilizados, `find` se vuelve una herramienta flexible.
+  > `find` es un comando extremadamente útil que no solo sirve para encontrar archivos/directorios, sino que también puede realizar acciones como ejecutar `-exec`. Gracias a los criterios de búsqueda utilizados,`find` se vuelve una herramienta muy útil y flexible.
 * **Writeup:** [/VeryEasy/acme.md](./VeryEasy/acme.md)
 
 --- 
+
+###  2/Nov/2026
+* **Laboratorios:** -Pn
+* **Dificultad:** Easy
+* **Técnicas y conceptos clave:**
+  * **Reverse shell:** técnica donde la víctima se conecta de forma activa con el atacante mediante la ejecución de payloads o malwares.
+  * **msfvenom:** es una de las herramientas de explotación de Metasploit. Sirve para generar payload malicioso empaquetado en un archivo. En el caso de este laboratorio, se utilizó para un archivo `.war` (Web Application Archive) que contiene los componentes necesarios para ejecutar una aplicación web Java.
+* **💡 Lección y aprendizaje clave:**
+  > Como las reglas de salida del sistema suelen ser más flexibles que las de entrada, utilizar reverse shell permite evadir las restricciones haciendo que sea la máquina vícitma quien inicie la conexión.
+
+  > RCE (Remote Code Execution). Permitir que usuarios no autenticados o no autorizados puedan desplegar archivos `.war` representa una falla critica seguridad. Si un atacante despliega un `.war` malicioso, el server lo descomprime y ejecuta, otorgando una consola remota interactiva.
+  > Para evitar que esto ocurra, se debe utilizar autenticación fuerte de usuarios, principio de menor privilegio, hardening de red y control y monitoreo de los archivos desplegados.
+  
+  > Diferencias entre malware, payload y script malicioso. 
+* **Writeup:** [/easy/pn.md](./easy/pn.md)
+
+---

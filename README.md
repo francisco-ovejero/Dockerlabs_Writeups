@@ -12,3 +12,4 @@ El objetivo es consolidar mi metodología, practicar con herramientas de la indu
 
 El contenido está categorizado por niveles de dificultad:
 - [Very Easy](https://github.com/francisco-ovejero/Dockerlabs_Writeups/tree/main/VeryEasy)
+- [Easy](https://github.com/francisco-ovejero/Dockerlabs_Writeups/tree/main/easy)

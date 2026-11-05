@@ -71,7 +71,7 @@ $ gobuster dir -u http://172.17.0.2/ -w /usr/share/wordlists/dirb/big.txt --excl
 
 <img width="652" height="275" alt="Captura de pantalla (315)" src="https://github.com/user-attachments/assets/a6c79fc1-a0b9-461a-9e5c-01411f2bf6e8" />
 
-Nos dirigimos a **http://172.17.0.2/wordpress/** en el navegador donde se encontró una web vulnerable con Worpress:
+Nos dirigimos a **http://172.17.0.2/wordpress/** en el navegador donde se encontró una web vulnerable con Wordpress:
 
 <img width="993" height="460" alt="Captura de pantalla (316)" src="https://github.com/user-attachments/assets/7aeaba87-6db2-4b1b-8187-79e6b2b76e7a" />
 
@@ -187,7 +187,8 @@ root
 
 ---
 ## Acciones de mitigación
-- **Deploy de archivos `.war` maliciosos**: gestionar y monitorizar despliegues de WAR no autorizados.
-- **Credenciales debiles y por defecto**: cambiar contraseñas por defecto para que sean más robusta y seguras.
-- **Login anónimo FTP**: eliminar login anónimo de FTP y archivos que contengan información sensible.
+- **Código malicioso en editor de temas**: deshabilitar el editor de códigos de temas (puede hacerce a traves de `wp-config.php`), aplicar autenticación de usuarios.
+- **Usuarios expuestos y contraseñas débiles**: utilizar plugins de seguridad, implementar políticas de contraseñas robustas y MFA.
+- **Comprobación de credenciales de forma másiva**: desactivar `xmlrpc.php`.
+- **Escalada de privilegios mediante SUID en `/bin/env`**: eliminar SUID de archivos si no es indispensable, aplicar principio de mínimo privilegio.
 ---

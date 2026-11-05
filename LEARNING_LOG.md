@@ -100,7 +100,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 * **💡 Lección y aprendizaje clave:**
   > Como las reglas de salida del sistema suelen ser más flexibles que las de entrada, utilizar reverse shell permite evadir las restricciones haciendo que sea la máquina vícitma quien inicie la conexión.
 
-  > RCE (Remote Code Execution). Permitir que usuarios no autenticados o no autorizados puedan desplegar archivos `.war` representa una falla critica seguridad. Si un atacante despliega un `.war` malicioso, el server lo descomprime y ejecuta, otorgando una consola remota interactiva.
+  > RCE (Remote Code Execution). Permitir que usuarios no autenticados o no autorizados puedan desplegar archivos `.war` representa una falla critica de seguridad. Si un atacante despliega un `.war` malicioso, el server lo descomprime y ejecuta, otorgando una consola remota interactiva.
   > Para evitar que esto ocurra, se debe utilizar autenticación fuerte de usuarios, principio de menor privilegio, hardening de red y control y monitoreo de los archivos desplegados.
   
   > Diferencias entre malware, payload y script malicioso. 

@@ -88,7 +88,7 @@ $ gobuster dir -u http://172.17.0.2/ -w /usr/share/wordlists/dirb/small.txt
 
 ---
 ## 3. Explotación
-### 1. Enumeración de usuarios
+### 3.1. Enumeración de usuarios
 Se usó `wpscan` para identificar usuarios, obteniendo como resultado un solo usuario válido: **mario**.
 
 ```bash
@@ -110,7 +110,7 @@ XML-RPC server accepts POST requests only.
 
 
 
-### 2. Ataque de fuerza bruta a usuario 
+### 3.2. Ataque de fuerza bruta a usuario 
 `wpscan` tambíen puede utilizarse para ataques de fuerza bruta a usuarios de webs que utilizan Wordpress.
 
 ```bash
@@ -130,7 +130,7 @@ Sabiendo la contraseña de **mario**, se inició sesión en en la ruta **/wordpr
 
 
 
-### 3. Reverse shell
+### 3.3. Reverse shell
 
 Dentro de la pestaña **Apariencia > Theme Code Editor** se encuentran archivos `.php` modificables. 
 
@@ -164,7 +164,7 @@ curl -s http://172.17.0.2/wordpress/wp-content/themes/twentytwentytwo/functions.
 <img width="660" height="187" alt="Captura de pantalla (329)" src="https://github.com/user-attachments/assets/95ad45f5-16de-4d05-8e97-1f92f8d7f9fe" />
 
 
-### 4. Escalada de privilegios
+### 3.4. Escalada de privilegios
 Al ejecutar `sudo -l` aparece el siguiente mensaje: `line 1: sudo: command not found`.
 Siendo que no existe sudo, se optó por buscar archivos con permisos **SUID**.
 

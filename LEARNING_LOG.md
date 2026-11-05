@@ -84,6 +84,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
   * **SUID:** permiso asignable a archivo ejecutable. Al ejecutar archivo con permiso SUID, el proceso se ejecuta con los privilegios del dueño del archivo, que suele ser root.
 * **💡 Lección y aprendizaje clave:**
   > SUID puede resultar peligroso cuando no se lo utiliza como corresponde. Si se encuentra en `/bin/bash`, cualquier usuario puede ejecutarlo y obtener privilegios root. Es de vital importancia para la seguridad conceder solo los permisos indispensables, tanto a los usuarios como a los archivos del sistema.
+  > Al ejecutar archivos con SUID, se usa el parametro **-p** para mantener los privilegios del autor.
 
   > `find` es un comando extremadamente útil que no solo sirve para encontrar archivos/directorios, sino que también puede realizar acciones como ejecutar `-exec`. Gracias a los criterios de búsqueda utilizados,`find` se vuelve una herramienta muy útil y flexible.
 * **Writeup:** [/VeryEasy/acme.md](./VeryEasy/acme.md)
@@ -104,5 +105,17 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
   
   > Diferencias entre malware, payload y script malicioso. 
 * **Writeup:** [/easy/pn.md](./easy/pn.md)
+
+---
+
+###  5/Nov/2026
+* **Laboratorios:** WalkingCMS
+* **Dificultad:** Easy
+* **Técnicas y conceptos clave:**
+  * **wpscan:** scaner de sitios web Wordpress (plugins, usuarios, credenciales).
+  * **Generación de reverse shells utilizando plataformas como [Reverse Shell Generator](https://www.revshells.com/).**
+* **💡 Lección y aprendizaje clave:**
+  > Archivo **xmlrcp.php** de Wordpress: permite conexión remota con el sitio web, automatizar tareas y validar credenciales de forma masiva y rápida, por lo que es vulnerable a ataques de fuerza bruta con `wpscan`.
+* **Writeup:** [/easy/walkingCMS.md](./easy/walkingCMS.md)
 
 ---

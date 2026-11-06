@@ -5,7 +5,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 ---
 
 ##  Resumen Global
-* **Laboratorios resueltos:** 11
+* **Laboratorios resueltos:** 12
 * **Plataforma orincipal:** DockerLabs
 
 ---

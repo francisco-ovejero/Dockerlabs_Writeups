@@ -5,7 +5,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 ---
 
 ##  Resumen Global
-* **Laboratorios resueltos:** 12
+* **Laboratorios resueltos:** 13
 * **Plataforma principal:** DockerLabs
 
 ---
@@ -119,3 +119,20 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 * **Writeup:** [/easy/walkingCMS.md](./easy/walkingCMS.md)
 
 ---
+
+###  9/Nov/2026
+* **Laboratorios:** Amor
+* **Dificultad:** Easy
+* **Técnicas y conceptos clave:**
+  * **Transferencia de archivos de shell remota a máquina atacante.**
+  * **steghide.**
+* **💡 Lección y aprendizaje clave:**
+  > Es posible transferir archivos de shell remota utilizando `python3 -m http.server 8000`, lo que abre un servidor web en el directorio actual. Teniendo el servidor activo y escuchando en el puerto 8000, se usa `wget` en una terminal local para completar la transferencia especificando la dirección IP víctima, el puerto y el nombre del archivo.
+  
+  > `steghide` es una herramienta de esteganografía que permite ocultar archivos completos dentro de un archivo portador modificando sus bits. Puede utilizarse para guardar (embed) o extraer (extract) archivos.
+  
+  > Diferencias de uso entre `steghide` y `exiftool`. 
+* **Writeup:** [/easy/amor.md](./easy/amor.md)
+
+---
+

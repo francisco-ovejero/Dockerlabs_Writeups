@@ -5,7 +5,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 ---
 
 ##  Resumen Global
-* **Laboratorios resueltos:** 13
+* **Laboratorios resueltos:** 14
 * **Plataforma principal:** DockerLabs
 
 ---
@@ -136,3 +136,21 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 
 ---
 
+###  13/Nov/2026
+* **Laboratorios:** AnonymousPingu
+* **Dificultad:** Easy
+* **Técnicas y conceptos clave:**
+  * **Tratamiento TTY.**
+  * **Escalada mediante `man` y `chown`.**
+* **💡 Lección y aprendizaje clave:**
+  > Tratamiento TTY: permite convertir una shell limitada en una terminal interactiva y funcional para la navegación, edición de archivos y ejecución de comandos Linux. Consiste en suspensión la shell actual, configuración de terminal, ajustes de variables de entorno y el modo terminal y recupreación de la sesión.
+  
+  > `man`, `dpkg`, entre otros, utilizan paginador (less - more) para evitar que la pantalla se inunde con información, lo que permite que la navegación sea más fácil y práctica gracias a la implementación de comandos dentro del propio paginador.
+  > 
+  > A su vez, esto permite escalar privilegios ya que los paginadores permiten invocar comandos del sistema operativo (como !/bin/bash). Si el binario principal se está ejecutando con permisos elevados, la nueva shell creada como proceso hijo hereda automáticamente esos mismos privilegios.
+  
+  > Binario `dpkg` (Debian package): herramienta para instalar, compilar, eliminar y manipular los paquetes de Debian. Posibilita el acceso a la información sobre los paquetes disponibles.
+  
+* **Writeup:** [/easy/anonymousPingu.md](./easy/anonymousPingu.md)
+
+---

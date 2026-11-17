@@ -5,7 +5,7 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
 ---
 
 ##  Resumen Global
-* **Laboratorios resueltos:** 14
+* **Laboratorios resueltos:** 15
 * **Plataforma principal:** DockerLabs
 
 ---
@@ -152,5 +152,20 @@ Este documento sirve como registro continuo de mi progreso, conceptos clave apre
   > Binario `dpkg` (Debian package): herramienta para instalar, compilar, eliminar y manipular los paquetes de Debian. Posibilita el acceso a la información sobre los paquetes disponibles.
   
 * **Writeup:** [/easy/anonymousPingu.md](./easy/anonymousPingu.md)
+
+---
+
+###  17/Nov/2026
+* **Laboratorios:** HiddenCat
+* **Dificultad:** Easy
+* **Técnicas y conceptos clave:**
+  * **Vulnerabilidad Ghostcat - CVE-2020-1938.**
+  * **Uso de la consola de Metasploit framework.**
+* **💡 Lección y aprendizaje clave:**
+  > **Puerto 8009 AJP13 (Apache Jserv Protocol)**: protocolo orientado a paquetes para optimizar la comunicación entre servidores frontales (como Apache HHTP) y servidores de aplicaciones Java (como Apache Tomcat). Los datos se empaquetan en formato binario para reducir el tamaño, ahorrar ancho de banda y acelerar el procesamiento.
+  
+  > **Ghostcat**: vulnerabilidad que afecta a la versión 9.0.31 de Apache Tomcat. Si se tiene acceso al puerto 8009, permite leer archivos dentro del directorio de la aplicación web (WEB-INF/web.xml, código fuente y demás información crítica). Si la aplicación permite subir archivos, es posible lograr **Remote Code Execution (RCE)** en el servidor.
+  
+* **Writeup:** [/easy/hiddencat.md](./easy/hiddencat.md)
 
 ---

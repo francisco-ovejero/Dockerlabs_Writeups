@@ -14,7 +14,7 @@ Acceder `root` mediante login FTP, reverse shell y escalada de privilegios en Li
 
 ## Despliegue de la máquina
 ```bash
-$ sudo bash auto_deploy.sh amor.tar
+$ sudo bash auto_deploy.sh anonymouspingu.tar
 ```
 <img width="576" height="360" alt="01 DESPLIEGE DOCKERLABS" src="https://github.com/user-attachments/assets/a29d7ee9-b8ea-48f2-be52-d846dad76585" />
 
